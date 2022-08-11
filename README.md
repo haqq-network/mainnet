@@ -39,7 +39,7 @@ haqqd config chain-id haqq_11235-1 && \
 haqqd init CUSTOM_MONIKER --chain-id haqq_11235-1
 
 # Prepare genesis file for mainet(haqq_11235-1)
-curl -OL https://gist.githubusercontent.com/kioqq/13f56710b3e932f9d12cc5c56f4f81f0/raw/da734a7a500aca4eb048899585302d9026b7b5b7/genesis.json
+curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/genesis.json
 mv genesis.json $HOME/.haqqd/config/genesis.json
 
 # Configure State sync

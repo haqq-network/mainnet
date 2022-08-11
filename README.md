@@ -1,4 +1,4 @@
-# Haqq Network // Mainet
+# Haqq Network // Mainnet
 
 ## Overview
 

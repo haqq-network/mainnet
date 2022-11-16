@@ -33,8 +33,7 @@ haqqd version "1.2.1" 4d25b4ae8c52011a64c7279454e88c372f515673
 ```
 
 ```sh
-CUSTOM_MONIKER="mainnet_node"
-
+CUSTOM_MONIKER="mainnet_seed_node" && \
 haqqd config chain-id haqq_11235-1 && \
 haqqd init CUSTOM_MONIKER --chain-id haqq_11235-1
 

@@ -10,7 +10,7 @@ TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.bloc
 P_PEERS=""
 
 # seed nodes
-SEEDS="4dddc284c0aa3373b3f73da95e989a607f37ee26@35.204.156.167:26656,deddb1434c1dbaf8756eafa65769447934672bc2@78.47.165.4:26656"
+SEEDS="deddb1434c1dbaf8756eafa65769447934672bc2@78.47.165.4:26656"
 
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \

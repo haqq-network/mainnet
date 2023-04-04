@@ -1,19 +1,46 @@
-# Haqq Network // Mainnet
+# Haqq Network - MainNet
+
 
 ## Overview
+The current version of the HAQQ MainNet is [`v1.2.1`](https://github.com/haqq-network/haqq/releases/tag/v1.2.1). To bootstrap a mainnet node, use State Sync and synchronize a snapshot from our official seed nodes.
 
-The current Haqq version of mainnet is [`v1.2.1`](https://github.com/haqq-network/haqq/releases/tag/v1.2.1). To bootstrap a mainnet node, it is possible to sync from v1.2.1 via State Sync.
 
 ## Quickstart
+_*Battle tested on [Ubuntu LTS 22.04](https://spinupwp.com/doc/what-does-lts-mean-ubuntu/#:~:text=The%20abbreviation%20stands%20for%20Long,extended%20period%20over%20regular%20releases)*_
+
+**All-in-one(tested on Ubuntu LTS):**
+
+You can easily install all dependencies and the Haqq node binary by using a single Bash script.
+
+``
+CUSTOM_MONIKER="haqq_node" &&\
+curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/all_in_one.sh &&\
+sh all_in_one.sh "$CUSTOM_MONIKER"
+``
+
+**You can do the same yourself**
 
 Install packages:
 ```sh
+sudo apt-get update && \
 sudo apt-get install curl git make gcc liblz4-tool build-essential jq -y
 ```
 
 **Preresquisites for compile from source**
 - `make` & `gcc` 
 - `Go 1.19+` ([How to install Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-20-04))
+
+**Easy GO compiler and HAQQ node installation**
+
+``
+curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/install_go.sh && \
+curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/install_haqq.sh && \
+sh install_go.sh && \ 
+source $HOME/.bash_profile && \
+sh install_haqq.sh
+``
+
+**Do the same manually:**
 
 Download latest binary for your arch: </br>
 https://github.com/haqq-network/haqq/releases/tag/v1.2.1
@@ -26,11 +53,23 @@ cd haqq
 make install
 ```
 
-Check binary version:
+Verify binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
 haqqd version "1.2.1" 4d25b4ae8c52011a64c7279454e88c372f515673
 ```
+
+**Initialize and start HAQQ**
+
+Run script: <br>
+``
+curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/init_start.sh && \
+sh init_start.sh mainnet_node
+``
+
+_``mainnet_node``_ is argument value for custom moniker <br>
+
+Manually:
 
 ```sh
 CUSTOM_MONIKER="mainnet_seed_node" && \

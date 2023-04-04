@@ -10,7 +10,7 @@ _*Battle tested on [Ubuntu LTS 22.04](https://spinupwp.com/doc/what-does-lts-mea
 
 **All-in-one(tested on Ubuntu LTS):**
 
-You can easily install all dependencies and the Haqq node binary by using a single Bash script.
+You can easily install all dependencies and the HAQQ node binary by using a single bash script.
 
 ```sh
 CUSTOM_MONIKER="haqq_node" && \

@@ -15,7 +15,7 @@ You can easily install all dependencies and the Haqq node binary by using a sing
 ```sh
 CUSTOM_MONIKER="haqq_node" && \
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/all_in_one.sh && \
-sh all_in_one.sh "$CUSTOM_MONIKER"
+sudo sh all_in_one.sh "$CUSTOM_MONIKER"
 ```
 
 **You can do the same yourself**

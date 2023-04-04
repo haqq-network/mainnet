@@ -12,11 +12,11 @@ _*Battle tested on [Ubuntu LTS 22.04](https://spinupwp.com/doc/what-does-lts-mea
 
 You can easily install all dependencies and the Haqq node binary by using a single Bash script.
 
-``
-CUSTOM_MONIKER="haqq_node" &&\
-curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/all_in_one.sh &&\
+```sh
+CUSTOM_MONIKER="haqq_node" && \
+curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/all_in_one.sh && \
 sh all_in_one.sh "$CUSTOM_MONIKER"
-``
+```
 
 **You can do the same yourself**
 
@@ -32,13 +32,13 @@ sudo apt-get install curl git make gcc liblz4-tool build-essential jq -y
 
 **Easy GO compiler and HAQQ node installation**
 
-``
+```sh
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/install_go.sh && \
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/install_haqq.sh && \
 sh install_go.sh && \ 
 source $HOME/.bash_profile && \
 sh install_haqq.sh
-``
+```
 
 **Do the same manually:**
 
@@ -61,11 +61,12 @@ haqqd version "1.2.1" 4d25b4ae8c52011a64c7279454e88c372f515673
 
 **Initialize and start HAQQ**
 
-Run script: <br>
-``
+Run script:
+
+```sh
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/init_start.sh && \
 sh init_start.sh mainnet_node
-``
+```
 
 _``mainnet_node``_ is argument value for custom moniker <br>
 

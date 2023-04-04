@@ -22,7 +22,7 @@ rm "go$GO_VERSION.linux-amd64.tar.gz"
 
 # Add Go binaries to the PATH and source the .bash_profile
 echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >>$HOME/.bash_profile
-source $HOME/.bash_profile
+. $HOME/.bash_profile
 
 # Verify the installation by checking the version of Go
 if command -v go >/dev/null; then

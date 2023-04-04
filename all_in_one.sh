@@ -27,7 +27,7 @@ sh install_go.sh
 
 echo "Sourcing the Go environment variables..."
 # Source the Go environment variables
-source $HOME/.bash_profile
+. $HOME/.bash_profile
 
 echo "Installing the Haqq node..."
 # Install the Haqq node

@@ -48,7 +48,7 @@ https://github.com/haqq-network/haqq/releases/tag/v1.3.1
 Build from source:
 ```sh
 cd $HOME
-git clone -b v1.2.1 https://github.com/haqq-network/haqq
+git clone -b v1.3.1 https://github.com/haqq-network/haqq
 cd haqq
 make install
 ```

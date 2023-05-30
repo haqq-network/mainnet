@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the RPC endpoint of the HAQQ network
-SNAP_RPC="https://rpc.tm.haqq.network:443"
+SNAP_RPC="https://m-s1-tm.haqq.sh:443"
 
 # Retrieve the latest block height of the HAQQ network
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height)
@@ -16,7 +16,7 @@ TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.bloc
 P_PEERS=""
 
 # Define seed nodes
-SEEDS="731f27fe9cd05257fcfc68b96147aec79035f920@seed1.haqq.network:26656,681da1f78742b2a0f8e0e7dac6e6f72166d82a8c@seed2.haqq.network:26656,d8e2d0095763ed3c6f38814e7752eccc3c547913@167.235.192.194:26656"
+SEEDS="d8e2d0095763ed3c6f38814e7752eccc3c547913@167.235.199.131:26656,731f27fe9cd05257fcfc68b96147aec79035f920@seed1.haqq.network:26656,681da1f78742b2a0f8e0e7dac6e6f72166d82a8c@seed2.haqq.network:26656"
 
 # Modify the HAQQ configuration file to add the trusted block and other parameters
 sed -i.bak \

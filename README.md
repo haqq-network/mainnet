@@ -2,7 +2,7 @@
 
 
 ## Overview
-The current version of the HAQQ MainNet is [`v1.2.1`](https://github.com/haqq-network/haqq/releases/tag/v1.2.1). To bootstrap a mainnet node, use State Sync and synchronize a snapshot from our official seed nodes.
+The current version of the HAQQ MainNet is [`v1.3.1`](https://github.com/haqq-network/haqq/releases/tag/v1.3.1). To bootstrap a mainnet node, use State Sync and synchronize a snapshot from our official seed nodes.
 
 
 ## Quickstart
@@ -43,7 +43,7 @@ sh install_haqq.sh
 **Do the same manually:**
 
 Download latest binary for your arch: </br>
-https://github.com/haqq-network/haqq/releases/tag/v1.2.1
+https://github.com/haqq-network/haqq/releases/tag/v1.3.1
 
 Build from source:
 ```sh
@@ -56,7 +56,7 @@ make install
 Verify binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
-haqqd version "1.2.1" 4d25b4ae8c52011a64c7279454e88c372f515673
+haqqd version "1.3.1" 877c235c1b86b0c734fb482fdebdec71bdc47b07
 ```
 
 **Initialize and start HAQQ**

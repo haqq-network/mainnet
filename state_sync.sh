@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the RPC endpoint of the HAQQ network
-SNAP_RPC="https://m-s1-tm.haqq.sh:443"
+SNAP_RPC="https://rpc.tm.haqq.network:443"
 
 # Retrieve the latest block height of the HAQQ network
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height)

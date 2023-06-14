@@ -1,7 +1,18 @@
 #!/bin/bash
 
-# Define the RPC endpoint of the HAQQ network
-SNAP_RPC="https://m-s1-tm.haqq.sh:443"
+# Define the Tendermint RPC endpoint's of the HAQQ network
+SNAP_RPC1="https://rpc.tm.haqq.network:443"
+SNAP_RPC2="https://m-s1-tm.haqq.sh:443"
+
+# Select one available SNAP_RPC
+if curl --output /dev/null --silent --head --fail "$SNAP_RPC1"; then
+  SNAP_RPC=$SNAP_RPC1
+elif curl --output /dev/null --silent --head --fail "$SNAP_RPC2"; then
+  SNAP_RPC=$SNAP_RPC2
+else
+  echo "[ERROR] Both SNAP_RPC1 and SNAP_RPC2 are not available. Exiting..."
+  exit 1
+fi
 
 # Retrieve the latest block height of the HAQQ network
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height)
@@ -21,7 +32,7 @@ SEEDS="d8e2d0095763ed3c6f38814e7752eccc3c547913@167.235.192.194:26656,731f27fe9c
 # Modify the HAQQ configuration file to add the trusted block and other parameters
 sed -i.bak \
   -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-      s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
+      s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC1,$SNAP_RPC2\"| ; \
       s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
       s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
       s|^(persistent_peers[[:space:]]+=[[:space:]]+).*$|\1\"$P_PEERS\"| ; \

@@ -81,6 +81,10 @@ haqqd init $CUSTOM_MONIKER --chain-id haqq_11235-1
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/genesis.json && \
 mv genesis.json $HOME/.haqqd/config/genesis.json
 
+# Prepare addrbook
+curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/addrbook.json && \
+mv addrbook.json $HOME/.haqqd/config/addrbook.json
+
 # Configure State sync
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/state_sync.sh && \
 sh state_sync.sh

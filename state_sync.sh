@@ -32,7 +32,7 @@ SEEDS="d8e2d0095763ed3c6f38814e7752eccc3c547913@167.235.192.194:26656,731f27fe9c
 # Modify the HAQQ configuration file to add the trusted block and other parameters
 sed -i.bak \
   -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
-      s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC1,$SNAP_RPC2\"| ; \
+      s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC,$SNAP_RPC\"| ; \
       s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
       s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
       s|^(persistent_peers[[:space:]]+=[[:space:]]+).*$|\1\"$P_PEERS\"| ; \

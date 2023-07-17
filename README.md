@@ -179,6 +179,7 @@ mv addrbook.json $HAQQD_DIR/config/addrbook.json && \
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/state_sync.sh && \
 sh state_sync.sh $HAQQD_DIR
 
+### Start
 docker run -it \
 --network host \
 -v $HAQQD_DIR:/home/haqq/.haqqd \

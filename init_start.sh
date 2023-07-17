@@ -8,6 +8,7 @@ fi
 
 # Use the provided custom moniker
 CUSTOM_MONIKER="$1"
+HAQQD_DIR="$HOME/.haqqd"
 
 # Set the chain ID
 haqqd config chain-id haqq_11235-1
@@ -16,10 +17,12 @@ haqqd config chain-id haqq_11235-1
 haqqd init $CUSTOM_MONIKER --chain-id haqq_11235-1
 
 # Download the genesis file for mainnet(haqq_11235-1)
-curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/genesis.json && mv genesis.json $HOME/.haqqd/config/genesis.json
+curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/genesis.json && \
+mv genesis.json $HAQQD_DIR/config/genesis.json
 
 # Configure State sync
-curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/state_sync.sh && sh state_sync.sh
+curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/state_sync.sh && \
+sh state_sync.sh $HAQQD_DIR
 
 # Start Haqq
 haqqd start

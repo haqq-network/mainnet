@@ -9,6 +9,7 @@ fi
 
 # Use the provided custom moniker
 CUSTOM_MONIKER="$1"
+HAQQD_DIR="$HOME/.haqqd"
 
 echo "\n\n\n###############################################\n\n\n"
 echo "Updating and installing required packages..."
@@ -50,4 +51,4 @@ echo "Initializing and starting the Haqq node..."
 echo "\n\n\n###############################################\n\n\n"
 
 # Initialize and start the Haqq node
-sh init_start.sh $CUSTOM_MONIKER
+sh init_start.sh $CUSTOM_MONIKER $HAQQD_DIR

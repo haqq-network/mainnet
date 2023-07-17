@@ -11,9 +11,11 @@ SNAP_RPC1="https://rpc.tm.haqq.network:443"
 SNAP_RPC2="https://m-s1-tm.haqq.sh:443"
 
 # Select one available SNAP_RPC
-if curl --output /dev/null --silent --head --fail "$SNAP_RPC1"; then
+if curl -Is "$SNAP_RPC1" | head -n 1 | grep "200 OK" > /dev/null; then
+  echo "[INFO] SNAP_RPC1 ($SNAP_RPC1) is available and selected for requests"
   SNAP_RPC=$SNAP_RPC1
-elif curl --output /dev/null --silent --head --fail "$SNAP_RPC2"; then
+elif curl -Is "$SNAP_RPC2" | head -n 1 | grep "200 OK" > /dev/null; then
+  echo "[INFO] SNAP_RPC2 ($SNAP_RPC2) is available and selected for requests"
   SNAP_RPC=$SNAP_RPC2
 else
   echo "[ERROR] Both SNAP_RPC1 and SNAP_RPC2 are not available. Exiting..."

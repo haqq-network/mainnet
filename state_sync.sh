@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if a haqqd directory provided as an argument
+if [ -z "$1" ]; then
+  echo "Usage: $0 <haqqd_directory>"
+  exit 1
+fi
+
 # Define the Tendermint RPC endpoint's of the HAQQ network
 SNAP_RPC1="https://rpc.tm.haqq.network:443"
 SNAP_RPC2="https://m-s1-tm.haqq.sh:443"
@@ -37,7 +43,7 @@ sed -i.bak \
       s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"| ; \
       s|^(persistent_peers[[:space:]]+=[[:space:]]+).*$|\1\"$P_PEERS\"| ; \
       s|^(seeds[[:space:]]+=[[:space:]]+).*$|\1\"$SEEDS\"|" \
-  $HOME/.haqqd/config/config.toml
+  $1/config/config.toml
 
 # Print a message indicating that the configuration file has been updated
 echo "HAQQ configuration file updated with the trusted block $BLOCK_HEIGHT ($TRUST_HASH)"

@@ -73,21 +73,23 @@ _``mainnet_node``_ is argument value for custom moniker <br>
 Manually:
 
 ```sh
-CUSTOM_MONIKER="mainnet_seed_node" && \
+export CUSTOM_MONIKER="mainnet_seed_node"
+export HAQQ_DIR="$HOME/.haqqd"
+
 haqqd config chain-id haqq_11235-1 && \
 haqqd init $CUSTOM_MONIKER --chain-id haqq_11235-1
 
 # Prepare genesis file for mainet(haqq_11235-1)
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/genesis.json && \
-mv genesis.json $HOME/.haqqd/config/genesis.json
+mv genesis.json $HAQQ_DIR/config/genesis.json
 
 # Prepare addrbook
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/addrbook.json && \
-mv addrbook.json $HOME/.haqqd/config/addrbook.json
+mv addrbook.json $HAQQ_DIR/config/addrbook.json
 
 # Configure State sync
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/state_sync.sh && \
-sh state_sync.sh
+sh state_sync.sh $HAQQ_DIR
 
 # Start Haqq
 haqqd start
@@ -102,14 +104,14 @@ go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@latest
 
 2. Create cosmovisor folders
 ```sh
-mkdir $HOME/.haqqd/cosmovisor && \
-mkdir -p $HOME/.haqqd/cosmovisor/genesis/bin && \
-mkdir -p $HOME/.haqqd/cosmovisor/upgrades
+mkdir $HAQQ_DIR/cosmovisor && \
+mkdir -p $HAQQ_DIR/cosmovisor/genesis/bin && \
+mkdir -p $HAQQ_DIR/cosmovisor/upgrades
 ```
 
 3. Copy node binary into Cosmovisor folder
 ```sh
-cp /root/go/bin/haqqd $HOME/.haqqd/cosmovisor/genesis/bin
+cp /root/go/bin/haqqd $HAQQ_DIR/cosmovisor/genesis/bin
 ```
 
 4. Create haqqd cosmovisor service
@@ -129,7 +131,7 @@ Restart=always
 RestartSec=3
 LimitNOFILE=4096
 Environment="DAEMON_NAME=haqqd"
-Environment="DAEMON_HOME=/root/.haqqd"
+Environment="DAEMON_HOME=$HAQQ_DIR"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="UNSAFE_SKIP_BACKUP=false"

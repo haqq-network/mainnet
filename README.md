@@ -158,15 +158,12 @@ journalctl -fu haqqd
 export CUSTOM_MONIKER="mainnet_seed_node"
 export HAQQD_DIR="/root/haqqd_dock"
 export HAQQD_VERSION="v1.4.0"
-```
 
 ### Check it works
-```sh
 docker run -it --rm \
 -v $HAQQD_DIR:/home/haqq/.haqqd \
 alhaqq/haqq:$HAQQD_VERSION \
 haqqd -v
-```
 
 ### Init
 ```sh
@@ -174,20 +171,14 @@ docker run -it --rm \
 -v $HAQQD_DIR:/home/haqq/.haqqd \
 alhaqq/haqq:$HAQQD_VERSION \
 haqqd init $CUSTOM_MONIKER --chain-id haqq_11235-1
-```
 
-### Setup
-```sh
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/genesis.json && \
 mv genesis.json $HAQQD_DIR/config/genesis.json && \
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/addrbook.json && \
 mv addrbook.json $HAQQD_DIR/config/addrbook.json && \
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/state_sync.sh && \
 sh state_sync.sh $HAQQD_DIR
-```
 
-### Start
-```sh
 docker run -it \
 --network host \
 -v $HAQQD_DIR:/home/haqq/.haqqd \

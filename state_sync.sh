@@ -10,17 +10,19 @@ fi
 SNAP_RPC1="https://rpc.tm.haqq.network:443"
 SNAP_RPC2="https://m-s1-tm.haqq.sh:443"
 
-# Select one available SNAP_RPC
-if curl -Is "$SNAP_RPC1" | head -n 1 | grep "200" > /dev/null; then
-  echo "[INFO] SNAP_RPC1 ($SNAP_RPC1) is available and selected for requests"
-  SNAP_RPC=$SNAP_RPC1
-elif curl -Is "$SNAP_RPC2" | head -n 1 | grep "200" > /dev/null; then
-  echo "[INFO] SNAP_RPC2 ($SNAP_RPC2) is available and selected for requests"
-  SNAP_RPC=$SNAP_RPC2
-else
-  echo "[ERROR] Both SNAP_RPC1 and SNAP_RPC2 are not available. Exiting..."
-  exit 1
-fi
+# # Select one available SNAP_RPC
+# if curl -Is "$SNAP_RPC1" | head -n 1 | grep "200" > /dev/null; then
+#   echo "[INFO] SNAP_RPC1 ($SNAP_RPC1) is available and selected for requests"
+#   SNAP_RPC=$SNAP_RPC1
+# elif curl -Is "$SNAP_RPC2" | head -n 1 | grep "200" > /dev/null; then
+#   echo "[INFO] SNAP_RPC2 ($SNAP_RPC2) is available and selected for requests"
+#   SNAP_RPC=$SNAP_RPC2
+# else
+#   echo "[ERROR] Both SNAP_RPC1 and SNAP_RPC2 are not available. Exiting..."
+#   exit 1
+# fi
+
+SNAP_RPC=$SNAP_RPC2
 
 # Retrieve the latest block height of the HAQQ network
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height)

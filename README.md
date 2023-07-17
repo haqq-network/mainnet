@@ -74,22 +74,22 @@ Manually:
 
 ```sh
 export CUSTOM_MONIKER="mainnet_seed_node"
-export HAQQ_DIR="$HOME/.haqqd"
+export HAQQD_DIR="$HOME/.haqqd"
 
 haqqd config chain-id haqq_11235-1 && \
 haqqd init $CUSTOM_MONIKER --chain-id haqq_11235-1
 
 # Prepare genesis file for mainet(haqq_11235-1)
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/genesis.json && \
-mv genesis.json $HAQQ_DIR/config/genesis.json
+mv genesis.json $HAQQD_DIR/config/genesis.json
 
 # Prepare addrbook
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/addrbook.json && \
-mv addrbook.json $HAQQ_DIR/config/addrbook.json
+mv addrbook.json $HAQQD_DIR/config/addrbook.json
 
 # Configure State sync
 curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/state_sync.sh && \
-sh state_sync.sh $HAQQ_DIR
+sh state_sync.sh $HAQQD_DIR
 
 # Start Haqq
 haqqd start

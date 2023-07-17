@@ -166,7 +166,6 @@ alhaqq/haqq:$HAQQD_VERSION \
 haqqd -v
 
 ### Init
-```sh
 docker run -it --rm \
 -v $HAQQD_DIR:/home/haqq/.haqqd \
 alhaqq/haqq:$HAQQD_VERSION \

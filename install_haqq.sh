@@ -6,7 +6,7 @@
 cd $HOME
 
 # Define the version of HAQQ to be installed
-HAQQ_VERSION="v1.4.0"
+HAQQ_VERSION="v1.4.1"
 
 # Clone the HAQQ repository for the specified version
 git clone -b $HAQQ_VERSION https://github.com/haqq-network/haqq

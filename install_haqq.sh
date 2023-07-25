@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install HAQQ 1.4.0
+# Install HAQQ 1.4.1
 
 # Change directory to the user's home directory
 cd $HOME

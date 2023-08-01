@@ -111,7 +111,7 @@ mkdir -p $HAQQD_DIR/cosmovisor/upgrades
 
 3. Copy node binary into Cosmovisor folder
 ```sh
-cp /root/go/bin/haqqd $HAQQ_DIR/cosmovisor/genesis/bin
+cp /root/go/bin/haqqd $HAQQD_DIR/cosmovisor/genesis/bin
 ```
 
 4. Create haqqd cosmovisor service

@@ -104,9 +104,9 @@ go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@latest
 
 2. Create cosmovisor folders
 ```sh
-mkdir $HAQQ_DIR/cosmovisor && \
-mkdir -p $HAQQ_DIR/cosmovisor/genesis/bin && \
-mkdir -p $HAQQ_DIR/cosmovisor/upgrades
+mkdir $HAQQD_DIR/cosmovisor && \
+mkdir -p $HAQQD_DIR/cosmovisor/genesis/bin && \
+mkdir -p $HAQQD_DIR/cosmovisor/upgrades
 ```
 
 3. Copy node binary into Cosmovisor folder
@@ -131,7 +131,7 @@ Restart=always
 RestartSec=3
 LimitNOFILE=4096
 Environment="DAEMON_NAME=haqqd"
-Environment="DAEMON_HOME=$HAQQ_DIR"
+Environment="DAEMON_HOME=$HAQQD_DIR"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="UNSAFE_SKIP_BACKUP=false"

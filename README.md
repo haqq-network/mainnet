@@ -8,16 +8,6 @@ The current version of the HAQQ MainNet is [`v1.4.1`](https://github.com/haqq-ne
 ## Quickstart
 _*Battle tested on [Ubuntu LTS 22.04](https://spinupwp.com/doc/what-does-lts-mean-ubuntu/#:~:text=The%20abbreviation%20stands%20for%20Long,extended%20period%20over%20regular%20releases)*_
 
-**All-in-one(tested on Ubuntu LTS):**
-
-You can easily install all dependencies and the HAQQ node binary by using a single bash script.
-
-```sh
-CUSTOM_MONIKER="haqq_node" && \
-curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/all_in_one.sh && \
-sudo sh all_in_one.sh "$CUSTOM_MONIKER"
-```
-
 **You can do the same yourself**
 
 Install packages:
@@ -60,17 +50,6 @@ haqqd version "1.4.1" af155c6952991de9289fef5cbfee102544b0b933
 ```
 
 **Initialize and start HAQQ**
-
-Run script:
-
-```sh
-curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/init_start.sh && \
-sh init_start.sh mainnet_node
-```
-
-_``mainnet_node``_ is argument value for custom moniker <br>
-
-Manually:
 
 ```sh
 export CUSTOM_MONIKER="mainnet_seed_node"

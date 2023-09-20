@@ -29,7 +29,7 @@ SNAP_RPC=$SNAP_RPC2
 LATEST_HEIGHT=$(curl -s $SNAP_RPC/block | jq -r .result.block.header.height)
 
 # Calculate the height of the block to be trusted
-BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000))
+BLOCK_HEIGHT=$((LATEST_HEIGHT - 10000))
 
 # Retrieve the hash of the block to be trusted
 TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)

@@ -2,7 +2,7 @@
 
 
 ## Overview
-The current version of the HAQQ MainNet is [`v1.4.1`](https://github.com/haqq-network/haqq/releases/tag/v1.4.1). To bootstrap a mainnet node, use State Sync and synchronize a snapshot from our official seed nodes.
+The current version of the HAQQ MainNet is [`v1.5.0`](https://github.com/haqq-network/haqq/releases/tag/v1.5.0). To bootstrap a mainnet node, use State Sync and synchronize a snapshot from our official seed nodes.
 
 
 ## Quickstart
@@ -18,7 +18,7 @@ sudo apt-get install curl git make gcc liblz4-tool build-essential jq -y
 
 **Preresquisites for compile from source**
 - `make` & `gcc` 
-- `Go 1.19+` ([How to install Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-20-04))
+- `Go 1.20+` ([How to install Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-on-ubuntu-20-04))
 
 **Easy GO compiler and HAQQ node installation**
 
@@ -33,12 +33,12 @@ sh install_haqq.sh
 **Do the same manually:**
 
 Download latest binary for your arch: </br>
-https://github.com/haqq-network/haqq/releases/tag/v1.4.1
+https://github.com/haqq-network/haqq/releases/tag/v1.5.0
 
 Build from source:
 ```sh
 cd $HOME
-git clone -b v1.4.1 https://github.com/haqq-network/haqq
+git clone -b v1.5.0 https://github.com/haqq-network/haqq
 cd haqq
 make install
 ```
@@ -46,7 +46,7 @@ make install
 Verify binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
-haqqd version "1.4.1" af155c6952991de9289fef5cbfee102544b0b933
+haqqd version "1.5.0" b4463195b0bd048376bc3ac6680b2094155c483b
 ```
 
 **Initialize and start HAQQ**
@@ -136,7 +136,7 @@ journalctl -fu haqqd
 ```sh
 export CUSTOM_MONIKER="mainnet_seed_node"
 export HAQQD_DIR="/root/haqqd_dock"
-export HAQQD_VERSION="v1.4.1"
+export HAQQD_VERSION="v1.5.0"
 
 ### Check it works
 docker run -it --rm \

@@ -37,7 +37,7 @@ TRUST_HASH=$(curl -s "$SNAP_RPC/block?height=$BLOCK_HEIGHT" | jq -r .result.bloc
 P_PEERS=""
 
 # Define seed nodes
-SEEDS="861e5892470275a394ebab407e8d62b1931843d3@192.248.181.17:26656,e1b058e5cfa2b836ddaa496b10911da62dcf182e@haqq-seed-de.allnodes.me:26656,e726816f42831689eab9378d5d577f1d06d25716@haqq-seed-us.allnodes.me:26656,0533e20e65912f72f2ad88a4c91eefbc634212d7@haqq-sync.rpc.p2p.world:26656,731f27fe9cd05257fcfc68b96147aec79035f920@seed1.haqq.network:26656,681da1f78742b2a0f8e0e7dac6e6f72166d82a8c@seed2.haqq.network:26656"
+SEEDS="861e5892470275a394ebab407e8d62b1931843d3@192.248.181.17:26656,e1b058e5cfa2b836ddaa496b10911da62dcf182e@haqq-seed-de.allnodes.me:26656,e726816f42831689eab9378d5d577f1d06d25716@haqq-seed-us.allnodes.me:26656,0533e20e65912f72f2ad88a4c91eefbc634212d7@haqq-sync.rpc.p2p.world:26656,731f27fe9cd05257fcfc68b96147aec79035f920@seed1.haqq.network:26656,681da1f78742b2a0f8e0e7dac6e6f72166d82a8c@seed2.haqq.network:26656,0265238d4845e041868d610c100b88f485eeddfb@rpc.haqq.nodestake.top:666"
 
 # Modify the HAQQ configuration file to add the trusted block and other parameters
 sed -i.bak \

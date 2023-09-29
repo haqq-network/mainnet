@@ -13,7 +13,7 @@ _*Battle tested on [Ubuntu LTS 22.04](https://spinupwp.com/doc/what-does-lts-mea
 Install packages:
 ```sh
 sudo apt-get update && \
-sudo apt-get install curl git make gcc liblz4-tool build-essential jq -y
+sudo apt-get install curl git make gcc liblz4-tool build-essential git-lfs jq -y
 ```
 
 **Preresquisites for compile from source**
@@ -40,6 +40,7 @@ Build from source:
 cd $HOME
 git clone -b v1.5.0 https://github.com/haqq-network/haqq
 cd haqq
+git lfs fetch --all
 make install
 ```
 

@@ -40,7 +40,6 @@ Build from source:
 cd $HOME
 git clone -b v1.6.0 https://github.com/haqq-network/haqq
 cd haqq
-git lfs fetch --all
 make install
 ```
 

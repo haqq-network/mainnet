@@ -82,7 +82,6 @@ go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@latest
 
 2. Create cosmovisor folders
 ```sh
-mkdir $HAQQD_DIR/cosmovisor && \
 mkdir -p $HAQQD_DIR/cosmovisor/genesis/bin && \
 mkdir -p $HAQQD_DIR/cosmovisor/upgrades
 ```

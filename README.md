@@ -88,7 +88,7 @@ mkdir -p $HAQQD_DIR/cosmovisor/upgrades
 
 3. Copy node binary into Cosmovisor folder
 ```sh
-cp /root/go/bin/haqqd $HAQQD_DIR/cosmovisor/genesis/bin
+cp $HOME/go/bin/haqqd $HAQQD_DIR/cosmovisor/genesis/bin
 ```
 
 4. Create haqqd cosmovisor service
@@ -102,8 +102,8 @@ Description="haqqd cosmovisor"
 After=network-online.target
 
 [Service]
-User=root
-ExecStart=/root/go/bin/cosmovisor run start
+User=<your user>
+ExecStart=/home/<your user>/go/bin/cosmovisor run start
 Restart=always
 RestartSec=3
 LimitNOFILE=4096
@@ -120,13 +120,13 @@ WantedBy=multi-user.target
 5. Enable and start service
 
 ```sh
-systemctl enable haqqd.service && \
-systemctl start haqqd.service
+sudo systemctl enable haqqd.service && \
+sudo systemctl start haqqd.service
 ```
 
 6. Check logs
 ```sh
-journalctl -fu haqqd
+sudo journalctl --system -fu haqqd
 ```
 
 ## Run in Docker

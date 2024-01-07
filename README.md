@@ -2,7 +2,7 @@
 
 
 ## Overview
-The current version of the HAQQ MainNet is [`v1.6.3`](https://github.com/haqq-network/haqq/releases/tag/v1.6.3). To bootstrap a mainnet node, use State Sync and synchronize a snapshot from our official seed nodes.
+The current version of the HAQQ MainNet is [`v1.6.4`](https://github.com/haqq-network/haqq/releases/tag/v1.6.3). To bootstrap a mainnet node, use State Sync and synchronize a snapshot from our official seed nodes.
 
 
 ## Quickstart
@@ -33,12 +33,12 @@ sh install_haqq.sh
 **Do the same manually:**
 
 Download latest binary for your arch: </br>
-https://github.com/haqq-network/haqq/releases/tag/v1.6.3
+https://github.com/haqq-network/haqq/releases/tag/v1.6.4
 
 Build from source:
 ```sh
 cd $HOME
-git clone -b v1.6.3 https://github.com/haqq-network/haqq
+git clone -b v1.6.4 https://github.com/haqq-network/haqq
 cd haqq
 make install
 ```
@@ -46,7 +46,7 @@ make install
 Verify binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
-haqqd version "1.6.3" b6e7768ee492e7fc55da560e8128981b55f5e6e8
+haqqd version "1.6.4 174a99b3dd8d6b0e089cb1e54dc3e628bb90c0f5
 ```
 
 **Initialize and start HAQQ**
@@ -134,7 +134,7 @@ sudo journalctl --system -fu haqqd
 ```sh
 export CUSTOM_MONIKER="mainnet_seed_node"
 export HAQQD_DIR="/root/haqqd_dock"
-export HAQQD_VERSION="v1.6.3"
+export HAQQD_VERSION="v1.6.4"
 
 ### Check it works
 docker run -it --rm \

@@ -128,37 +128,3 @@ sudo systemctl start haqqd.service
 ```sh
 sudo journalctl --system -fu haqqd
 ```
-
-## Run in Docker
-
-```sh
-export CUSTOM_MONIKER="mainnet_seed_node"
-export HAQQD_DIR="/root/haqqd_dock"
-export HAQQD_VERSION="v1.6.4"
-
-### Check it works
-docker run -it --rm \
--v $HAQQD_DIR:/home/haqq/.haqqd \
-alhaqq/haqq:$HAQQD_VERSION \
-haqqd -v
-
-### Init
-docker run -it --rm \
--v $HAQQD_DIR:/home/haqq/.haqqd \
-alhaqq/haqq:$HAQQD_VERSION \
-haqqd init $CUSTOM_MONIKER --chain-id haqq_11235-1
-
-curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/genesis.json && \
-mv genesis.json $HAQQD_DIR/config/genesis.json && \
-curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/addrbook.json && \
-mv addrbook.json $HAQQD_DIR/config/addrbook.json && \
-curl -OL https://raw.githubusercontent.com/haqq-network/mainnet/master/state_sync.sh && \
-sh state_sync.sh $HAQQD_DIR
-
-### Start
-docker run -it \
---network host \
--v $HAQQD_DIR:/home/haqq/.haqqd \
-alhaqq/haqq:$HAQQD_VERSION \
-haqqd start
-```

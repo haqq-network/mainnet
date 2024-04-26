@@ -6,7 +6,7 @@
 cd $HOME
 
 # Define the version of Go to be installed
-GO_VERSION="1.20.2"
+GO_VERSION="1.21.9"
 
 # Download the Go binary tarball for the specified version
 wget "https://golang.org/dl/go$GO_VERSION.linux-amd64.tar.gz"

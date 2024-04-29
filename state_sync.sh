@@ -9,7 +9,7 @@ fi
 
 # Define the Tendermint RPC endpoint's of the HAQQ network
 SNAP_RPC1="https://rpc.tm.haqq.network:443"
-SNAP_RPC2="https://m-s1-tm.haqq.sh:443"
+SNAP_RPC2="https://rpc.haqq.sh:443"
 
 # Select one available SNAP_RPC
 if curl -Is "$SNAP_RPC1/health" | head -n 1 | grep "200" > /dev/null; then

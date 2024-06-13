@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Install HAQQ 1.7.4
+# Install HAQQ 1.7.6
 
 # Change directory to the user's home directory
 cd $HOME
 
 # Define the version of HAQQ to be installed
-HAQQ_VERSION="v1.7.4"
+HAQQ_VERSION="v1.7.6"
 
 # Clone the HAQQ repository for the specified version
 git clone -b $HAQQ_VERSION https://github.com/haqq-network/haqq

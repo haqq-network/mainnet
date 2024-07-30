@@ -2,7 +2,7 @@
 
 
 ## Overview
-The current version of the HAQQ MainNet is [`v1.7.6`](https://github.com/haqq-network/haqq/releases/tag/v1.7.6). To bootstrap a mainnet node, use State Sync and synchronize a snapshot from our official seed nodes.
+The current version of the HAQQ MainNet is [`v1.7.7`](https://github.com/haqq-network/haqq/releases/tag/v1.7.7). To bootstrap a mainnet node, use State Sync and synchronize a snapshot from our official seed nodes.
 
 
 ## Quickstart
@@ -13,7 +13,7 @@ _*Battle tested on [Ubuntu LTS 22.04](https://spinupwp.com/doc/what-does-lts-mea
 Install packages:
 ```sh
 sudo apt-get update && \
-sudo apt-get install curl git make gcc liblz4-tool build-essential git-lfs jq -y
+sudo apt-get install curl git make gcc liblz4-tool build-essential git-lfs jq aria2 -y
 ```
 
 **Preresquisites for compile from source**
@@ -33,12 +33,12 @@ sh install_haqq.sh
 **Do the same manually:**
 
 Download latest binary for your arch: </br>
-https://github.com/haqq-network/haqq/releases/tag/v1.7.6
+https://github.com/haqq-network/haqq/releases/tag/v1.7.7
 
 Build from source:
 ```sh
 cd $HOME
-git clone -b v1.7.6 https://github.com/haqq-network/haqq
+git clone -b v1.7.7 https://github.com/haqq-network/haqq
 cd haqq
 make install
 ```
@@ -46,7 +46,7 @@ make install
 Verify binary version:
 ```sh
 haqq@haqq-node:~# haqqd -v
-haqqd version "1.7.6 6c2cce73614ecff317f3569593176c9e4938c6a6
+haqqd version "1.7.7 31c96a356645946f8bc10a8beaab85d36c6ec18b
 ```
 
 **Initialize and start HAQQ**
